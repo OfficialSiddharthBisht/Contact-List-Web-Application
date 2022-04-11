@@ -1,4 +1,9 @@
-let contactList = [];
+let contactList;
+if(localStorage.getItem('contactList') === null){
+    contactList = [];
+}else {
+    contactList = JSON.parse(localStorage.getItem('contactList'));
+}
 document.querySelector('form').addEventListener('submit',()=>{
     let contact = {
      name : document.getElementById("name").value,
@@ -7,4 +12,5 @@ document.querySelector('form').addEventListener('submit',()=>{
     }
     contactList.push(contact);
     localStorage.setItem('contactList',JSON.stringify(contactList));
+    alert("Contact Added Successfully");
 });
