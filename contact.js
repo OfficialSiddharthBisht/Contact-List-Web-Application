@@ -37,6 +37,7 @@ function displayData(name , phoneNumber ,type){
         }
         favouriteList.push(fav);
         localStorage.setItem('favouriteList',JSON.stringify(favouriteList));
+        alert("Contact Added To Favourites");
     })
     tbody.append(row);
 }
